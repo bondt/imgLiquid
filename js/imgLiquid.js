@@ -149,10 +149,12 @@ imgLiquid.injectCss = '.imgLiquid img {visibility:hidden}';
 
 				function processBgSize() {
 
+					var imgSrc = encodeURI(decodeURI($img.attr('src')));
+
 					// Check change img src
-					if ($imgBoxCont.css('background-image').indexOf(encodeURI($img.attr('src'))) === -1) {
+					if ($imgBoxCont.css('background-image').indexOf(imgSrc) === -1) {
 						// Change
-						$imgBoxCont.css({'background-image': 'url("' + encodeURI($img.attr('src')) + '")'});
+						$imgBoxCont.css({'background-image': 'url("' + imgSrc + '")'});
 					}
 
 					$imgBoxCont.css({
